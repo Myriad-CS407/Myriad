@@ -2,6 +2,7 @@ var express = require('express')
   , logger = require('morgan')
   , app = express()
   , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
+  , myriad = require('jade').compileFile(__dirname + '/source/templates/index.jade')
 
 app.use(logger('dev'))
 app.use(express.static(__dirname + '/static'))
@@ -9,6 +10,15 @@ app.use(express.static(__dirname + '/static'))
 app.get('/', function (req, res, next) {
   try {
     var html = template({ title: 'Home' })
+    res.send(html)
+  } catch (e) {
+    next(e)
+  }
+})
+
+app.get('/myriad/', function(req, res, next) {
+  try {
+    var html = myriad( {title: 'Myriad'})
     res.send(html)
   } catch (e) {
     next(e)

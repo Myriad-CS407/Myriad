@@ -1,0 +1,107 @@
+/* Adapted from https://jsbin.com/seqola/2/edit?html,css,js,output */
+body.slide-active
+  overflow-x: hidden
+.no-margin-top
+  margin-top: 0px!important
+#page-content
+  position: relative
+  padding-top: 70px
+  left: 0
+  &.slide-active
+    padding-top: 0
+
+#slide-nav
+  .navbar-toggle
+    cursor: pointer
+    position: relative
+    line-height: 0
+    float: left
+    margin: 0
+    width: 30px
+    height: 40px
+    paddding: 10px 0 0 0
+    border: 0
+    background: transparent
+
+  .navbar-toggle > .icon-bar
+    width: 100%
+    display: block
+    height: 3px
+    margin: 5px 0 0 0
+
+  .navbar-toggle.slide-active
+    .icon-bar
+      background: orange
+
+.navbar-header
+  position: relative
+
+.navbar.navbar-fixed-top.slide-active
+  position: relative
+
+@media(max-width: 767px)
+  #slide-nav
+    .container
+      margin: 0!important
+      padding: 0!important
+      height: 100%
+    .navbar-header
+      margin: 0 auto
+      padding 0 15px
+    .navbar.slide-active
+      position: absolute
+      width: 80%
+      top: -1px
+      z-index: 1000
+    #slidemenu
+      background: #f7f7f7
+      left: -100%
+      width: 80%
+      min-width: 0
+      position: absolute
+      padding-left: 0
+      z-index: 2
+      top: -8px
+      margin: 0
+      .navbar-nav
+        min-width: 0
+        width: 100%
+        margin: 0
+        .dropdown-menu
+          min-width: 0
+          width: 80%
+          white-space: normal
+    border-top: 0
+    &.navbar-inverse
+      #slidemenu
+        background: #333
+  #navbar-height-col
+    position: fixed
+    top: 0
+    height: 100%
+    bottom: 0
+    //width: 80%
+    //issue with width here
+    width:45%
+    left: -80%
+    background: #f7f7f7
+    &.inverse
+      background: #333
+      z-index: 1
+      border: 0
+    .navbar-form
+      width: 100%
+      margin: 8px 0
+      text-align: center
+      overflow: hidden
+      .form-control
+        text-align: center
+      .btn
+        width: 100%
+@media(min-width: 768px)
+  #page-content
+    left: 0!important
+  .navbar.navbar-fixed-top.slide-active
+    position: fixed
+  .navbar-header
+    left: 0!important
