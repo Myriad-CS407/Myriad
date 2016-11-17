@@ -20,10 +20,16 @@ html
         li
           a(href="/news_source") Settings
     div.navbar.navbar-default.navbar-fixed-top
-      button.navbar-toggle(type="button", data-toggle="offcanvas", data-target="#myNavmenu", data-canvas="body", style="float:left")
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
+      div(style="z-index:1000; width:100%")
+        button.navbar-toggle(type="button", data-toggle="offcanvas", data-target="#myNavmenu", data-canvas="body", style="float:left")
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      div(style="z-index:1; width:100%")
+        ul.nav.nav-justified
+          li
+            a.navbar-brand(href="#")
+              block page_title
 
 
     div.sitebody
