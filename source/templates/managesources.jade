@@ -1,3 +1,43 @@
 extend layout
 
+block our_title
+  span Manage Sources
+
 block content
+  div.container
+    div.row
+      div.col-xs-9
+        h2 Manage Sources 
+      div.col-xs-3
+        h2 
+          span.glyphicon.glyphicon-plus(style="float:right; margin-right:10px")
+
+
+    div.row
+      div.col-xs-12
+        table.table
+          tr
+            td(style="font-weight: bold;") Source Name
+            td(style="font-weight: bold; text-align: center") Delete
+          tr
+            td Forbes
+            td(style="text-align: center;")
+              a
+                span.glyphicon.glyphicon-trash
+          tr
+            td Huffinton Post
+            td(style="text-align: center")
+              span.glyphicon.glyphicon-trash
+          tr
+            td The Onion
+            td(style="text-align: center")
+              span.glyphicon.glyphicon-trash
+          tr
+            td Reddit
+            td(style="text-align: center")
+              span.glyphicon.glyphicon-trash
+          tr
+            td ESPN
+            td(style="text-align: center")
+              span.glyphicon.glyphicon-trash
+        

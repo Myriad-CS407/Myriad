@@ -13,12 +13,13 @@ html
 
   body
     nav#myNavmenu.navmenu.navmenu-default.navmenu-fixed-left.offcanvas(role="navigation")
-      a.navmenu-brand(href="/myriad") Myriad
+      a.navmenu-brand(href="/myriad") 
+        block our_title
       ul.nav.navmenu-nav
         li
           a(href="/myriad") Home
         li
-          a(href="/news_source") Settings
+          a(href="/settings") Settings
     div.navbar.navbar-default.navbar-fixed-top
       button.navbar-toggle(type="button", data-toggle="offcanvas", data-target="#myNavmenu", data-canvas="body", style="float:left")
         span.icon-bar
