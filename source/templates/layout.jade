@@ -19,6 +19,9 @@ html
     script.
       MyApp = angular.module('MyApp',['ngMaterial', 'ngMessages'])
         .controller('AppCtrl', function($scope) {
+          $scope.goToPage = function(link) {
+            window.location = link;
+          }
           $scope.articles = [
           {
             where: 'http://www.theonion.com/article/new-report-finds-americans-most-interested-science-54722',
@@ -44,7 +47,7 @@ html
           a(href="/myriad") Home
         li
           a(href="/settings") Settings
-    div.navbar.navbar-default.navbar-fixed-top
+    div.navbar.navbar-default.navbar-fixed-top.navbar-color
       div(style="z-index:1000; width:100%")
         button.navbar-toggle(type="button", data-toggle="offcanvas", data-target="#myNavmenu", data-canvas="body", style="float:left")
           span.icon-bar
@@ -53,7 +56,7 @@ html
       div(style="z-index:1; width:100%")
         ul.nav.nav-justified
           li
-            a.navbar-brand(href="#")
+            a.navbar-brand.navbar-white-text(href="#")
               block page_title
 
 
