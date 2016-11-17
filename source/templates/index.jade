@@ -11,7 +11,6 @@ block content
         md-list(flex="")
           md-list-item.md-3-line.panel(ng-repeat="item in articles", ng-click="null")
             div.md-list-item-text(layout="column")
-              h3 {{ item.who }}
-              h4 {{ item.what }}
-              p {{ item.notes }}
+              h3 {{ item.title }}
+              p {{ item.summary }}
 
