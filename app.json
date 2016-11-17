@@ -1,0 +1,7 @@
+{
+  "name": "Myriad - 407 Project",
+  "description": "A node.js powered news aggregator",
+  "repository": "https://github.com/Myriad-CS407/Myriad",
+  "keywords": ["node", "express", "angular"],
+  "image": "heroku/nodejs"
+}
