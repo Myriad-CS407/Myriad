@@ -6,9 +6,8 @@ block page_title
 
 block content
   script.
-    angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
-
-    .controller('AppCtrl', function($scope) {
+    MyApp = angular.module('MyApp',[])
+      .controller('AppCtrl', function($scope) {
         $scope.todos = [
         {
           what: 'Brunch this weekend?',
@@ -43,11 +42,13 @@ block content
       ];
     });
 
-  div.container
-    md-list(flex="")
-      md-list-item.md-3-line(ng-repeat="item in todos", ng-click="null")
-          div.md-list-item-text(layout="column")
-            h3
-             span(ng-bind="item.who")
-            h4 | {{ item.what }}
-            p | {{ item.notes }}
+  div.container(ng-controller="AppCtrl", ng-cloak="", layout-gt-sm="row", layout="column", ng-app="MyApp")
+    div(flex-gt-sm="50", flex="")
+      md-content
+        md-list(flex="")
+          md-subheader.md-no-sticky 3 line item (with hover)
+          md-list-item.md-3-line(ng-repeat="item in todos", ng-click="null")
+            div.md-list-item-text(layout="column")
+              h3 {{ item.who }}
+              h4 {{ item.what }}
+              p {{ item.notes }}
