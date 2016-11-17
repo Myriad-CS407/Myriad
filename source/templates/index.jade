@@ -5,49 +5,11 @@ block page_title
 
 
 block content
-  script.
-    MyApp = angular.module('MyApp',['ngMaterial', 'ngMessages'])
-      .controller('AppCtrl', function($scope) {
-        $scope.todos = [
-        {
-          what: 'Brunch this weekend?',
-          who: 'Min Li Chan',
-          when: '3:08PM',
-          notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-          what: 'Brunch this weekend?',
-          who: 'Min Li Chan',
-          when: '3:08PM',
-          notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-          what: 'Brunch this weekend?',
-          who: 'Min Li Chan',
-          when: '3:08PM',
-          notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-          what: 'Brunch this weekend?',
-          who: 'Min Li Chan',
-          when: '3:08PM',
-          notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-          what: 'Brunch this weekend?',
-          who: 'Min Li Chan',
-          when: '3:08PM',
-          notes: " I'll be in your neighborhood doing errands"
-        }
-      ];
-    });
-
-
   div.container(ng-controller="AppCtrl", ng-cloak="", layout-gt-sm="row", layout="column", ng-app="MyApp")
     div(flex-gt-sm="50", flex="")
       md-content
         md-list(flex="")
-          md-list-item.md-3-line.panel(ng-repeat="item in todos", ng-click="null")
+          md-list-item.md-3-line.panel(ng-repeat="item in articles", ng-click="null")
             div.md-list-item-text(layout="column")
               h3 {{ item.who }}
               h4 {{ item.what }}

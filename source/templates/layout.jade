@@ -16,6 +16,43 @@ html
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js')
     script(src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js')
 
+    script.
+      MyApp = angular.module('MyApp',['ngMaterial', 'ngMessages'])
+        .controller('AppCtrl', function($scope) {
+          $scope.articles = [
+          {
+            what: 'Brunch this weekend?',
+            who: 'Min Li Chan',
+            when: '3:08PM',
+            notes: " I'll be in your neighborhood doing errands"
+          },
+          {
+            what: 'Brunch this weekend?',
+            who: 'Min Li Chan',
+            when: '3:08PM',
+            notes: " I'll be in your neighborhood doing errands"
+          },
+          {
+            what: 'Brunch this weekend?',
+            who: 'Min Li Chan',
+            when: '3:08PM',
+            notes: " I'll be in your neighborhood doing errands"
+          },
+          {
+            what: 'Brunch this weekend?',
+            who: 'Min Li Chan',
+            when: '3:08PM',
+            notes: " I'll be in your neighborhood doing errands"
+          },
+          {
+            what: 'Brunch this weekend?',
+            who: 'Min Li Chan',
+            when: '3:08PM',
+            notes: " I'll be in your neighborhood doing errands"
+          }
+        ];
+      });
+
   body
     nav#myNavmenu.navmenu.navmenu-default.navmenu-fixed-left.offcanvas(role="navigation")
       a.navmenu-brand(href="/myriad") 
