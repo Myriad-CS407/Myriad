@@ -5,3 +5,7 @@
 .sitebody {
     margin-top: 51px;
 }
+
+.adam-table td {
+    text-align: center !important;
+}
