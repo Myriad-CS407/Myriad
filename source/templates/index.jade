@@ -6,7 +6,7 @@ block page_title
 
 block content
   script.
-    MyApp = angular.module('MyApp',[])
+    MyApp = angular.module('MyApp',['ngMaterial', 'ngMessages'])
       .controller('AppCtrl', function($scope) {
         $scope.todos = [
         {
@@ -47,8 +47,7 @@ block content
     div(flex-gt-sm="50", flex="")
       md-content
         md-list(flex="")
-          md-subheader.md-no-sticky 3 line item (with hover)
-          md-list-item.md-3-line(ng-repeat="item in todos", ng-click="null")
+          md-list-item.md-3-line.panel(ng-repeat="item in todos", ng-click="null")
             div.md-list-item-text(layout="column")
               h3 {{ item.who }}
               h4 {{ item.what }}
