@@ -1,1 +1,1 @@
-web: npm run build && npm run start
+web: rm -rf static/css && mkdir -p static/css && node server
