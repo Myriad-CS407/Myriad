@@ -9,3 +9,13 @@
 .adam-table td {
     text-align: center !important;
 }
+
+.adam-trashcan {
+	color: black;
+	text-decoration: none;
+}
+
+.adam-trashcan:active, .adam-trashcan:visited, .adam-trashcan:hover {
+	color: red;
+	text-decoration: none;
+}
