@@ -1,77 +1,24 @@
 doctype html
 html
   head
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="viewport", content="width=device-width,initial-scale=1,user-scalable=no")
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/sidemenu.css')
+    link(rel='stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css')
+    link(rel='stylesheet', href='/content/site.css')
     title Myriad
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js')
+
   body
-    div.navbar.navbar-inverse.navbar-fixed-top#slide-nav(role="navigation")
-      div.container
-        div.navbar-header
-          a.navbar-toggle
-            span.sr-only Toggle Navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href="#") Myriad
-        div#slidemenu
-          ul.nav.navbar-nav
-            li
-              a(href="#") Link 1
-            li
-              a(href="#") Link 2
-            li
-              a(href="#") Link3
-    div#page-content
+    nav#myNavmenu.navmenu.navmenu-default.navmenu-fixed-left.offcanvas(role="navigation")
+      span Stuff
+    div.navbar.navbar-default.navbar-fixed-top
+      button.navbar-toggle(type="button", data-toggle="offcanvas", data-target="#myNavmenu", data-canvas="body", style="float:left")
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      span Myriad
+
+    div.sitebody
       block content
-
-    script.
-      $(document).ready(function () {
-        /* Adapted from https://jsbin.com/seqola/2/edit?html,css,js,output */
-
-        //stick in the fixed 100% height behind the navbar but don't wrap it
-        $('#slide-nav.navbar-inverse').after($('<div class="inverse" id="navbar-height-col"></div>'));
-
-        $('#slide-nav.navbar-default').after($('<div id="navbar-height-col"></div>'));
-
-        // Enter your ids or classes
-        var toggler = '.navbar-toggle';
-        var pagewrapper = '#page-content';
-        var navigationwrapper = '.navbar-header';
-        var menuwidth = '100%'; // the menu inside the slide menu itself
-        var slidewidth = '80%';
-        var menuneg = '-100%';
-        var slideneg = '-80%';
-
-        $("#slide-nav").on("click", toggler, function (e) {
-
-          var selected = $(this).hasClass('slide-active');
-          $('#slidemenu').stop().animate({
-            left: selected ? menuneg : '0px'
-          });
-          $('#navbar-height-col').stop().animate({
-            left: selected ? slideneg : '0px'
-          });
-          $(pagewrapper).stop().animate({
-            left: selected ? '0px' : slidewidth
-          });
-          $(navigationwrapper).stop().animate({
-            left: selected ? '0px' : slidewidth
-          });
-
-          $(this).toggleClass('slide-active', !selected);
-          $('#slidemenu').toggleClass('slide-active');
-          $('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
-        });
-
-        var selected = '#slidemenu, #page-content, body, .navbar, .navbar-header';
-
-        $(window).on("resize", function () {
-          if ($(window).width() > 767 && $('.navbar-toggle').is(':hidden')) {
-            $(selected).removeClass('slide-active');
-          }
-        });
-      });
