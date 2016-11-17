@@ -15,5 +15,6 @@ block content
           md-list-item.md-3-line(ng-repeat="item in articles", ng-click="goToPage(item.where)")
             div.md-list-item-text(layout="column")
               h3 {{ item.title }}
+              h4 {{ item.when }}
               p {{ item.summary }}
 
