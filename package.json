@@ -4,10 +4,8 @@
   "description": "A tool for quickly reading multi-media",
   "main": "index.js",
   "scripts": {
-    "build-css": "stylus source/stylesheets/*.styl -o static/css",
-    "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
     "clean": "rm -rf static/css && mkdir -p static/css",
-    "build": "npm run clean && npm run build-css",
+    "build": "npm run clean",
     "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
     "start": "node server"
   },
@@ -23,7 +21,6 @@
   "dependencies": {
     "morgan": "~1.7.0",
     "express": "~4.14.0",
-    "stylus": "~0.54.5",
     "jade": "~1.11.0",
     "nodemon": "~1.9.2"
   }

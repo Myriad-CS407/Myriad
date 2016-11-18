@@ -3,18 +3,44 @@ html
   head
     meta(name="viewport", content="width=device-width,initial-scale=1,user-scalable=no")
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-    link(rel='stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css')
+    link(rel='stylesheet', href='/content/jasny-bootstrap.css')
     link(rel='stylesheet', href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css')
     link(rel='stylesheet', href='/content/site.css')
     title Myriad
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-    script(src='http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js')
+    script(src='/js/jasny-bootstrap.js')
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js')
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js')
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js')
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js')
     script(src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js')
+
+    script.
+
+      MyApp = angular.module('MyApp',['ngMaterial', 'ngMessages'])
+        .controller('AppCtrl', function($scope) {
+          $scope.goToPage = function(link) {
+            window.location = link;
+          }
+          $scope.articles = [
+          {
+            where: 'http://www.theonion.com/article/new-report-finds-americans-most-interested-science-54722',
+            when: '11/17/2016',
+            title: 'New Report Finds Americans Most Interested In Science When Moon Looks Different Than Usual',
+            summary: 'Explaining that readership of science-related articles and discussion of scientific concepts tends to surge at such times, a report released Thursday by the National Science Foundation confirmed that Americans are most interested in science when the moon looks different than normal. “According to our findings, citizens are never more engaged by scientific disciplines than when the moon does not look like it regularly does—for example, when it becomes big or bright,” read the report in part, which added that while the nation’s interest in science is typically fairly minimal and consistent when the moon is its usual size and color, as soon as these properties of the moon differ in a noticeable way, millions of Americans begin displaying a desire to learn and share scientific knowledge.',
+            sitename: 'The Onion'
+          },
+          {
+            where: 'http://www.theonion.com/article/fda-approves-new-pasta-shape-54724',
+            when: '11/17/2016',
+            title: 'FDA Approves New Pasta Shape',
+            summary: 'Following months of analysis and numerous rounds of human trials, the Food and Drug Administration officially announced Thursday the approval of a new pasta shape. “After conducting multiple research studies, we have determined that tagallafoglio is as safe, effective, and flavorful as any other pasta shape on the market,” said FDA commissioner Robert Califf, adding that the tubular curl with scalloped edges passed tests for retaining both tomato and cream-based sauces, and was shown to possess a conveniently short boil time.',
+            sitename: 'The Onion'
+          }
+        ];
+      });
+
 
   body
     nav#myNavmenu.navmenu.navmenu-default.navmenu-fixed-left.offcanvas(role="navigation")
@@ -22,10 +48,12 @@ html
         block our_title
       ul.nav.navmenu-nav
         li
-          a(href="/myriad") Home
+          a.navmenu-item(href="/myriad") Home
         li
-          a(href="/settings") Settings
-    div.navbar.navbar-default.navbar-fixed-top
+          a.navmenu-item(href="/news_sources") Add News Source
+        li
+          a.navmenu-item(href="/settings") Settings
+    div.navbar.navbar-default.navbar-fixed-top.navbar-color
       div(style="z-index:1000; width:100%")
         button.navbar-toggle(type="button", data-toggle="offcanvas", data-target="#myNavmenu", data-canvas="body", style="float:left")
           span.icon-bar
@@ -34,7 +62,7 @@ html
       div(style="z-index:1; width:100%")
         ul.nav.nav-justified
           li
-            a.navbar-brand(href="#")
+            a.navbar-brand.navbar-white-text(href="#")
               block page_title
 
 
