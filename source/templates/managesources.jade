@@ -7,15 +7,15 @@ block our_title
   span Manage Sources
 
 block content
-  div#Content.container-fluid(ng-controller="AppCtrl", ng-cloak="", layout-gt-sm="row", layout="column", ng-app="MyApp")
-    div.row
+  div#Content.container-fluid(ng-controller="AppCtrl", ng-cloak="", layout="column", ng-app="MyApp")
+    div.row(style="width:100vw;")
       div.col-xs-9
         h2 Sources
       div.col-xs-3
         h2
           a.btn.btn-default(type="submit", role="button", href="news_sources")
             span.glyphicon.glyphicon-plus
-    div.row
+    div.row(style="width:100vw;")
       div(flex="100")
         md-content
           div(layout="row")
