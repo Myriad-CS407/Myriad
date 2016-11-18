@@ -3,25 +3,40 @@ extend layout
 block our_title
   span Add News Source
 
+block page_title
+  span.h2 Add Source
+ 
 block content
   div.container
     div.row
-      div.col(style="text-align: center")
-        h2 Add News Source 
+      div.col-xs-9
+        h3 Add News Source
+      div.col-xs-3
+        h3
+          a.btn.btn-default(type="submit", role="button", href="settings")
+            span.glyphicon.glyphicon-triangle-left
+    br
+    div.row
+      div.col-xs-3
+        form(name="input", action="html_form_action.asp", method="get")
+          key Name
+      dev.col-xs-9
+        input(type="text", name="newsName") 
+    br
+    div.row
+      div.col-xs-3
+        form(name="input", action="html_form_action.asp", method="get")
+          key URL
+      dev.col-xs-9
+        input(type="text", name="urlLink") 
+    br
+    div.row
+      div.col-xs-3
+        | Description
+      div.col-xs-9
+        textarea#news( name="resp", rows="12", cols="30" )
+          | Enter Description
+    br
     div.row
       div.col(style="text-align: center")
-        | Enter keyword for news outlet.
-  div.container
-      div.col(style="text-align: center")
-        textarea#news( name="resp", rows="12", cols="40" )
-          | Enter Keyword
-  br
-  div.container
-    div.row
-      div.col(style="text-align: center")
-        div.col-xs-4
-          input(type="button", value="Browse")
-        div.col-xs-4
-          input(type="button", value="Add")
-        div.col-xs-4
-          input(type="button", value="Remove")
+        input(type="button", value="Add")
