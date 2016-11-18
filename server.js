@@ -3,7 +3,7 @@ var express = require('express')
   , app = express()
   , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
   , myriad = require('jade').compileFile(__dirname + '/source/templates/index.jade')
-  , news_sources = require('jade').compileFile(__dirname + '/source/templates/news_source.jade')
+  , news_sources = require('jade').compileFile(__dirname + '/source/templates/news_sources.jade')
   , settings = require('jade').compileFile(__dirname + '/source/templates/managesources.jade')
 
 app.use(logger('dev'))
@@ -27,9 +27,9 @@ app.get('/myriad/', function(req, res, next) {
   }
 })
 
-app.get('/news_source', function(req, res, next) {
+app.get('/news_sources', function(req, res, next) {
   try {
-    var html = news_source( {title: 'Myriad'})
+    var html = news_sources( {title: 'Myriad'})
     res.send(html)
   } catch (e) {
     next(e)

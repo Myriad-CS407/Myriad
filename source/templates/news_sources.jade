@@ -1,0 +1,27 @@
+extend layout
+
+block our_title
+  span Add News Source
+
+block content
+  div.container
+    div.row
+      div.col(style="text-align: center")
+        h2 Add News Source 
+    div.row
+      div.col(style="text-align: center")
+        | Enter keyword for news outlet.
+  div.container
+      div.col(style="text-align: center")
+        textarea#news( name="resp", rows="12", cols="40" )
+          | Enter Keyword
+  br
+  div.container
+    div.row
+      div.col(style="text-align: center")
+        div.col-xs-4
+          input(type="button", value="Browse")
+        div.col-xs-4
+          input(type="button", value="Add")
+        div.col-xs-4
+          input(type="button", value="Remove")
