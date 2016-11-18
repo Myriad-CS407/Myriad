@@ -68,3 +68,9 @@
 .navmenu-item:hover, .navmenu-item:active {
     background-color: #999999 !important;
 }
+
+/*CSS specific to main section*/
+h3.title {
+    word-wrap: break-word;
+    white-space: normal !important;
+}

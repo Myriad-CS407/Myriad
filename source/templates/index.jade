@@ -8,13 +8,15 @@ block page_title
 
 
 block content
-  div.container.site-background-color(ng-controller="AppCtrl", ng-cloak="", layout-gt-sm="row", layout="column", ng-app="MyApp")
-    div(flex-gt-sm="50", flex="")
-      md-content
-        md-list(flex="")
-          md-list-item.md-3-line(ng-repeat="item in articles", ng-click="goToPage(item.where)")
-            div.md-list-item-text(layout="column")
-              h3 {{ item.title }}
-              h4 {{ item.when }}
-              p {{ item.summary }}
+  div#Content.container-fluid.site-background-color(ng-controller="AppCtrl", ng-cloak="", layout-gt-sm="row", layout="column", ng-app="MyApp")
+    div(flex="")
+      md-content.site-background-color
+        div(layout="row")
+          div(flex="0", flex-gt-sm="25")
+          md-list.site-background-color(flex-gt-sm="50", flex="")
+            md-list-item.md-3-line.panel.panel-default(ng-repeat="item in articles", ng-click="goToPage(item.where)")
+              div.md-list-item-text.panel-body(layout="column")
+                h3.title {{ item.title }}
+                h4 {{ item.when }}
+                p {{ item.summary }}
 
