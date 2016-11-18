@@ -1,0 +1,17 @@
+extend layout
+
+block our_title
+  span Add News Source
+
+block content
+  div.container
+
+    div.row
+      div.col-xs-9
+        h2 Add News Source 
+
+        form(name="input", action="html_form_action.asp", method="get")
+          key Add News Source:
+            input(type="text", name="src")
+
+          input(type="submit", value="Submit")
