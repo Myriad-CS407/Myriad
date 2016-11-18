@@ -4,7 +4,7 @@ block our_title
   span Myriad
 
 block page_title
-  span Myriad
+  span.h2 Myriad
 
 
 block content
@@ -14,9 +14,19 @@ block content
         div(layout="row")
           div(flex="0", flex-gt-sm="25")
           md-list.site-background-color(flex-gt-sm="50", flex="")
-            md-list-item.md-3-line.panel.panel-default(ng-repeat="item in articles", ng-click="goToPage(item.where)")
-              div.md-list-item-text.panel-body(layout="column")
-                h3.title {{ item.title }}
-                h4 {{ item.when }}
-                p {{ item.summary }}
+            md-list-item.md-3-line.panel.panel-default(ng-repeat="item in articles", ng-click="goToPage(item)")
+              div.md-list-item-text(layout="column")
+                div.panel-heading
+                  h3.title {{ item.title }}
+                  h4 {{ item.when }}
+                div.panel-body
+                  p {{ item.summary }}
 
+    div.modal.fade#myModal(role="dialog")
+      div.modal-dialog
+        div.modal-content
+          div.modal-header
+            button.close(type="button", data-dismiss="modal") &times;
+            h4.modal-title {{ modal_text }}
+          div.modal-body
+            iframe#iFrameViewer.modal-iframe
