@@ -13,7 +13,7 @@ block content
         h2 Sources
       div.col-xs-3
         h2
-          a.btn.btn-default(type="submit", role="button", href="news_sources")
+          a.btn.btn-default(type="submit", role="button", href="#", data-toggle="modal", data-target="#myModal2") 
             span.glyphicon.glyphicon-plus
     div.row(style="width:100vw;")
       div(flex="100")
@@ -25,4 +25,6 @@ block content
                   span(style="font-size:17pt") {{ item.title }}
                 div.md-list-item-text.col-xs-4
                   md-button.md-raised.md-warn(style="float:right;min-width: 36px;padding-left: 10px;padding-right: 10px;") &times;
+  
+    include news_sources
 
