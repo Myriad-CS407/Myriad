@@ -75,6 +75,7 @@ h3.title {
     white-space: normal !important;
 }
 
+
 .modal-dialog {
   width: calc(100vw - 20px);
   height: calc(100vh - 20px);
@@ -97,4 +98,12 @@ h3.title {
     position: absolute;
     width: 100%;
     height: calc(100vh - 79px)
+}
+
+ul.nav > li {
+    border-bottom: 1px darkgray solid;
+}
+#myNavmenu > div {
+    border-top: 1px darkgrey solid;
+
 }
