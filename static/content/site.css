@@ -74,3 +74,10 @@ h3.title {
     word-wrap: break-word;
     white-space: normal !important;
 }
+
+ul.nav > li {
+    border-bottom: 1px darkgray solid;
+}
+#myNavmenu > div {
+    border-top: 1px darkgrey solid;
+}
