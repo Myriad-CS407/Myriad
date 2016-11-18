@@ -107,3 +107,7 @@ ul.nav > li {
     border-top: 1px darkgrey solid;
 
 }
+
+.almosteverything {
+    height: calc(100% - 60px)!important;
+}

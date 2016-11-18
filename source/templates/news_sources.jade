@@ -1,42 +1,34 @@
-extend layout
-
-block our_title
-  span Add News Source
-
-block page_title
-  span.h2 Add Source
- 
-block content
-  div.container
-    div.row
-      div.col-xs-9
-        h3 Add News Source
-      div.col-xs-3
-        h3
-          a.btn.btn-default(type="submit", role="button", href="settings")
-            span.glyphicon.glyphicon-triangle-left
-    br
-    div.row
-      div.col-xs-3
-        form(name="input", action="html_form_action.asp", method="get")
-          key Name
-      dev.col-xs-9
-        input(type="text", name="newsName") 
-    br
-    div.row
-      div.col-xs-3
-        form(name="input", action="html_form_action.asp", method="get")
-          key URL
-      dev.col-xs-9
-        input(type="text", name="urlLink") 
-    br
-    div.row
-      div.col-xs-3
-        | Description
-      div.col-xs-9
-        textarea#news( name="resp", rows="12", cols="30" )
-          | Enter Description
-    br
-    div.row
-      div.col(style="text-align: center")
-        input(type="button", value="Add")
+.news_sources
+  div.modal.fade#myModal2(role="dialog")
+    div.modal-dialog
+      div.modal-content
+        div.modal-header
+          button.close(type="button", data-dismiss="modal") &times;
+          h4.modal-title Add News Source
+        div.modal-body
+          div.container
+            br
+            div.row
+              div.col-xs-3
+                form(name="input", action="html_form_action.asp", method="get")
+                  key Name
+              dev.col-xs-9
+                input(type="text", name="newsName") 
+            br
+            div.row
+              div.col-xs-3
+                form(name="input", action="html_form_action.asp", method="get")
+                  key URL
+              dev.col-xs-9
+                input(type="text", name="urlLink") 
+            br
+            div.row
+              div.col-xs-3
+                | Description
+              div.col-xs-9
+                textarea#news( name="resp", rows="12", cols="30" )
+                  | Enter Description
+            br
+            div.row
+              div.col(style="text-align: center")
+                input(type="button", value="Add")
