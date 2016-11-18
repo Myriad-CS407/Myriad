@@ -7,7 +7,7 @@ block our_title
   span Manage Sources
 
 block content
-  div.container
+  div#Content.container-fluid(ng-controller="AppCtrl", ng-cloak="", layout-gt-sm="row", layout="column", ng-app="MyApp")
     div.row
       div.col-xs-9
         h2 Sources
@@ -15,14 +15,14 @@ block content
         h2
           a.btn.btn-default(type="submit", role="button", href="news_sources")
             span.glyphicon.glyphicon-plus
-  div#Content.container-fluid(ng-controller="AppCtrl", ng-cloak="", layout-gt-sm="row", layout="column", ng-app="MyApp")
-    div(flex="")
-      md-content
-        div(layout="row")
-          md-list.md-dense(flex="", style="background:white")
-            md-list-item.md-2-line(ng-repeat="item in websites", style="border-bottom: ridge #D3649F")
-              div.md-list-item-text.col-xs-8
-                span(style="font-size:17pt") {{ item.title }}
-              div.md-list-item-text.col-xs-4
-                md-button.md-raised.md-accent.md-hue-1 &times;
+    div.row
+      div(flex="100")
+        md-content
+          div(layout="row")
+            md-list.md-dense(flex="100", style="background:white")
+              md-list-item.md-2-line(ng-repeat="item in websites", style="border-bottom: ridge #D3649F")
+                div.md-list-item-text.col-xs-8
+                  span(style="font-size:17pt") {{ item.title }}
+                div.md-list-item-text.col-xs-4
+                  md-button.md-raised.md-accent.md-hue-1(style="float:right;min-width: 36px;padding-left: 10px;padding-right: 10px;") &times;
 
