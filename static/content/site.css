@@ -74,3 +74,27 @@ h3.title {
     word-wrap: break-word;
     white-space: normal !important;
 }
+
+.modal-dialog {
+  width: calc(100vw - 20px);
+  height: calc(100vh - 20px);
+  margin: 10px;
+  padding: 0;
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.modal-body {
+    padding: 0px;
+}
+
+.modal-iframe {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 79px)
+}

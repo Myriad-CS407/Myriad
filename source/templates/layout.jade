@@ -20,8 +20,12 @@ html
 
       MyApp = angular.module('MyApp',['ngMaterial', 'ngMessages'])
         .controller('AppCtrl', function($scope) {
-          $scope.goToPage = function(link) {
-            window.location = link;
+          $scope.modal_text = "Hello!"
+          $scope.goToPage = function(obj) {
+            //window.location = link;
+            $('#iFrameViewer').attr('src', obj.where);
+            $scope.modal_text = obj.sitename;
+            $('#myModal').modal('toggle');
           }
           $scope.articles = [
           {
