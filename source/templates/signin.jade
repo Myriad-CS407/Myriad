@@ -1,0 +1,26 @@
+extend layout
+
+block page_title
+  span.h2 Sign In
+
+block our_title
+  span Sign In
+
+block content
+  div.container
+    div.row
+      div.col-xs-12
+        h3.text-center Sign in to your Myriad Account
+        p &nbsp;
+    div.row
+      div.col-xs-2.col-md-4
+      div.col-xs-8.col-md-4
+        form(method="get", action="/myriad")
+          div.form-group
+            label Username
+            input.form-control(type="text", placeholder="Username")
+          div.form-group
+            label Password
+            input.form-control(type="password", placeholder="Password")
+          button.btn.btn-default.btn-block.btn-primary Log In
+      div.col-xs-2.col-md-4
