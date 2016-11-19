@@ -27,6 +27,11 @@ html
             $scope.modal_text = obj.sitename;
             $('#myModal').modal('toggle');
           }
+          $scope.removeSource = function(obj) {
+            $scope.websites = $.grep($scope.websites,
+              function(o, i) { return o == obj; },
+              true);
+          }
           $scope.articles = [
           {
             where: 'http://www.theonion.com/article/new-report-finds-americans-most-interested-science-54722',
