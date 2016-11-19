@@ -76,21 +76,21 @@ h3.title {
 }
 
 
-.modal-dialog {
+.modal-dialog.fullmodal {
   width: calc(100vw - 20px);
   height: calc(100vh - 20px);
   margin: 10px;
   padding: 0;
 }
 
-.modal-content {
+.modal-content.fullmodal {
   height: auto;
   min-height: 100%;
   margin: 0px;
   padding: 0px;
 }
 
-.modal-body {
+.modal-body.fullmodal {
     padding: 0px;
 }
 

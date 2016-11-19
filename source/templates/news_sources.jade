@@ -6,29 +6,29 @@
           button.close(type="button", data-dismiss="modal") &times;
           h4.modal-title Add News Source
         div.modal-body
-          div.container
+          div
             br
             div.row
               div.col-xs-3
                 form(name="input", action="html_form_action.asp", method="get")
                   key Name
               dev.col-xs-9
-                input(ng-model="name", type="text", name="newsName") 
+                input.form-control(ng-model="name", type="text", name="newsName")
             br
             div.row
               div.col-xs-3
                 form(name="input", action="html_form_action.asp", method="get")
                   key URL
               dev.col-xs-9
-                input(ng-model="url", type="text", name="urlLink") 
+                input.form-control(ng-model="url", type="text", name="urlLink")
             br
             div.row
               div.col-xs-3
                 | Description
               div.col-xs-9
-                textarea#news( name="resp", rows="12", cols="30" )
+                textarea.form-control#news( name="resp", rows="12", cols="30" )
                   | Enter Description
             br
             div.row
               div.col(style="text-align: center")
-                md-button.md-raised(ng-click="addSource(name, url)") Add
+                md-button.md-raised.md-primary(ng-click="addSource(name, url)") Add
