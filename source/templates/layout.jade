@@ -32,6 +32,9 @@ html
               function(o, i) { return o == obj; },
               true);
           }
+          $scope.addSource = function(obj) {
+            $scope.websites.push(obj);
+          }
           $scope.articles = [
           {
             where: 'http://www.theonion.com/article/new-report-finds-americans-most-interested-science-54722',
