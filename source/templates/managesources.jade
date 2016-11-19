@@ -7,7 +7,7 @@ block our_title
   span Manage Sources
 
 block content
-  div#Content.container-fluid(ng-controller="AppCtrl", ng-cloak="", layout="column", ng-app="MyApp")
+  div#Content.container-fluid(ng-cloak="", layout="column")
     div.row(style="width:100vw;")
       div.col-xs-9
         h2 Sources
@@ -24,7 +24,7 @@ block content
                 div.md-list-item-text.col-xs-8
                   span(style="font-size:17pt") {{ item.title }}
                 div.md-list-item-text.col-xs-4
-                  md-button.md-raised.md-warn(style="float:right;min-width: 36px;padding-left: 10px;padding-right: 10px;", ng-click="removeSource(item)")
+                  md-button.md-raised.md-warn(style="float:right;min-width: 36px;padding-left: 10px;padding-right: 10px;", ng-click="showConfirm($event, item)")
                     span.glyphicon.glyphicon-trash
     include news_sources
 

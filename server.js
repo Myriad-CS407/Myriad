@@ -1,7 +1,6 @@
 var express = require('express')
   , logger = require('morgan')
   , app = express()
-  , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
   , myriad = require('jade').compileFile(__dirname + '/source/templates/index.jade')
   , news_sources = require('jade').compileFile(__dirname + '/source/templates/news_sources.jade')
   , settings = require('jade').compileFile(__dirname + '/source/templates/managesources.jade')
@@ -12,11 +11,11 @@ app.use(express.static(__dirname + '/static'))
 
 app.get('/', function (req, res, next) {
   try {
-    var html = template({ title: 'Home' })
-    res.send(html)
-  } catch (e) {
-    next(e)
-  }
+        var html = signin( {title: 'Myriad - Sign In'})
+        res.send(html)
+    } catch (e) {
+        next(e)
+    }
 })
 
 app.get('/myriad/', function(req, res, next) {
