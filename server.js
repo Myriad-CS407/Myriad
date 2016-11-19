@@ -1,7 +1,6 @@
 var express = require('express')
   , logger = require('morgan')
   , app = express()
-  , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
   , myriad = require('jade').compileFile(__dirname + '/source/templates/index.jade')
   , news_sources = require('jade').compileFile(__dirname + '/source/templates/news_sources.jade')
   , settings = require('jade').compileFile(__dirname + '/source/templates/managesources.jade')
