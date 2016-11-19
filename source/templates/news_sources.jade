@@ -13,14 +13,14 @@
                 form(name="input", action="html_form_action.asp", method="get")
                   key Name
               dev.col-xs-9
-                input(type="text", name="newsName") 
+                input(ng-model="name", type="text", name="newsName") 
             br
             div.row
               div.col-xs-3
                 form(name="input", action="html_form_action.asp", method="get")
                   key URL
               dev.col-xs-9
-                input(type="text", name="urlLink") 
+                input(ng-model="url", type="text", name="urlLink") 
             br
             div.row
               div.col-xs-3
@@ -31,4 +31,4 @@
             br
             div.row
               div.col(style="text-align: center")
-                input(type="button", value="Add")
+                md-button.md-raised(ng-click="addSource(name, url)") Add
