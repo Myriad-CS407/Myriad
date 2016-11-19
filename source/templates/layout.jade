@@ -115,13 +115,21 @@ html
           li
             span Categories
           li
-            div.checkbox
-              label Science
-                input(type="checkbox")
-          li
-            div.checkbox
+            a(data-value="Science", tabIndex="-1", style="text-align:center")
+              input(type="checkbox", style="float:left", checked) 
               label Sports
-                input(type="checkbox")
+          li
+            a(data-value="Science", tabIndex="-1", style="text-align:center")
+              input(type="checkbox", style="float:left", checked) 
+              label Science
+          li
+            a(data-value="Science", tabIndex="-1", style="text-align:center")
+              input(type="checkbox", style="float:left", checked) 
+              label Tech
+          li
+            a(data-value="Science", tabIndex="-1", style="text-align:center")
+              input(type="checkbox", style="float:left", checked) 
+              label World news
 
     div.sitebody
       block content
