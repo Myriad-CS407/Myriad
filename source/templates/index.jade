@@ -19,17 +19,17 @@ block content
               div.md-list-item-text(layout="column")
                 div.panel-heading
                   h3.title {{ item.title }}
-                  h4 {{ item.when }}
+                  h4 {{ item.when }} - {{ item.sitename }}
                 div.panel-body
                   p {{ item.summary }}
 
     div.modal.fade#myModal(role="dialog")
-      div.modal-dialog
-        div.modal-content
+      div.modal-dialog.fullmodal
+        div.modal-content.fullmodal
           div.modal-header
             button.close(type="button", data-dismiss="modal") &times;
             h4.modal-title {{ modal_text }}
-          div.modal-body
+          div.modal-body.fullmodal
             iframe#iFrameViewer.modal-iframe
 
 block filter_button
