@@ -32,8 +32,9 @@ html
               function(o, i) { return o == obj; },
               true);
           }
-          $scope.addSource = function(obj) {
-            $scope.websites.push(obj);
+          $scope.addSource = function(name, url) {
+            $scope.websites.push({title: name, link: url});
+            $('#myModal2').modal('hide');
           }
           $scope.articles = [
           {
@@ -102,7 +103,5 @@ html
           li(style="width:100vw")
             a.navbar-brand.navbar-white-text(href="#", style="width:100%")
               block page_title
-
-
     div.sitebody
       block content
