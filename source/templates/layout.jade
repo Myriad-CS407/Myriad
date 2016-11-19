@@ -127,7 +127,7 @@ html
           }
         ];
         $scope.articles.sort(function(a, b) {
-          return Date(a.when) > Date(b.when) ? -1 : 1;
+          return (new Date(b.when)).getTime() - (new Date(a.when)).getTime();
         });
         $scope.websites = [
         {
