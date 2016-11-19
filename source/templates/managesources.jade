@@ -24,7 +24,7 @@ block content
                 div.md-list-item-text.col-xs-8
                   span(style="font-size:17pt") {{ item.title }}
                 div.md-list-item-text.col-xs-4
-                  md-button.md-raised.md-warn(style="float:right;min-width: 36px;padding-left: 10px;padding-right: 10px;", ng-click="removeSource(item)")
+                  md-button.md-raised.md-warn(style="float:right;min-width: 36px;padding-left: 10px;padding-right: 10px;", ng-click="showConfirm($event, item)")
                     span.glyphicon.glyphicon-trash
     include news_sources
 
