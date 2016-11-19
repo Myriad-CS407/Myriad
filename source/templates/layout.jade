@@ -54,6 +54,9 @@ html
             category: 'humor'
           }
         ];
+        $scope.articles.sort(function(a, b) {
+          return Date(a.when) > Date(b.when) ? -1 : 1;
+        });
         $scope.websites = [
         {
           link: 'http://www.forbes.com/',
