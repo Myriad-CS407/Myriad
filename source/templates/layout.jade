@@ -98,10 +98,27 @@ html
           span.icon-bar
           span.icon-bar
           span.icon-bar
-      div(style="z-index:1; width:100%")
+        block filter_button
+      div(style="z-index:1; width:100%; position:fixed")
         ul.nav.nav-justified
           li(style="width:100vw")
             a.navbar-brand.navbar-white-text(href="#", style="width:100%")
               block page_title
+    nav#filterMenu.navmenu.navmenu-default.navmenu-fixed-right.offcanvas(role="navigation")
+      a.navmenu-brand(href="#")
+        h2 Filters
+      div(style="background-color:#ddd; position:relative").almosteverything
+        ul.nav.navmenu-nav
+          li
+            span Categories
+          li
+            div.checkbox
+              label Science
+                input(type="checkbox")
+          li
+            div.checkbox
+              label Sports
+                input(type="checkbox")
+
     div.sitebody
       block content
