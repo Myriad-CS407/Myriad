@@ -12,11 +12,11 @@ app.use(express.static(__dirname + '/static'))
 
 app.get('/', function (req, res, next) {
   try {
-    var html = template({ title: 'Home' })
-    res.send(html)
-  } catch (e) {
-    next(e)
-  }
+        var html = signin( {title: 'Myriad - Sign In'})
+        res.send(html)
+    } catch (e) {
+        next(e)
+    }
 })
 
 app.get('/myriad/', function(req, res, next) {
