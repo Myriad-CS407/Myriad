@@ -16,11 +16,12 @@ block content
       div.col-xs-2.col-md-4
       div.col-xs-8.col-md-4
         form(method="get", action="/myriad")
-          div.form-group
+          md-input-container(style="width:100%")
             label Username
-            input.form-control(type="text", placeholder="Username")
-          div.form-group
+            input(ng-model="username")
+          md-input-container(style="width:100%")
             label Password
-            input.form-control(type="password", placeholder="Password")
-          button.btn.btn-default.btn-block.btn-primary Log In
+            input(ng-model="password", type="password")
+          div.text-center
+            md-button.md-raised.md-primary(type="submit") Log In
       div.col-xs-2.col-md-4
