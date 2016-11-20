@@ -36,7 +36,7 @@ html
             $scope.websites.push({title: name, link: url});
             $('#myModal2').modal('hide');
           }
-          $scope.articles = [
+          $scope.articles_master = [
           {
             where: 'http://www.theonion.com/article/new-report-finds-americans-most-interested-science-54722',
             when: '11/17/2016',
@@ -150,9 +150,13 @@ html
             category: 'World News'
           }
         ];
-        $scope.articles.sort(function(a, b) {
+        $scope.articles_master.sort(function(a, b) {
           return (new Date(b.when)).getTime() - (new Date(a.when)).getTime();
         });
+        $scope.articles = [];
+        for (var i = 0, len = $scope.articles_master.length; i < len; i++) {
+          $scope.articles.push($scope.articles_master[i]);
+        }
         $scope.websites = [
         /*{
           link: 'http://www.forbes.com/',
@@ -187,6 +191,31 @@ html
           { name: 'Politics', val: true },
           { name: 'Satire', val: true }
         ];
+
+        $scope.filterArticles = function(obj) {
+          for (var i = 0; i < $scope.filters.length; i++) {
+            if ($scope.filters[i] == obj) {
+              $scope.filters[i].val = !$scope.filters[i].val
+            }
+          }
+
+          var tempArticles = [];
+          for (var i = 0, len = $scope.articles_master.length; i < len; i++) {
+            for (var j = 0, len2 = $scope.filters.length; j < len2; j++) {
+              if ($scope.filters[j].val && $scope.articles_master[i].category == $scope.filters[j].name) {
+                tempArticles.push($scope.articles_master[i]);
+              }
+            }
+          }
+
+          for (var i = 0; i < $scope.filters.length; i++) {
+            if ($scope.filters[i] == obj) {
+              $scope.filters[i].val = !$scope.filters[i].val
+            }
+          }
+
+          $scope.articles = tempArticles;
+        };
 
         $scope.showConfirm = function(ev, obj) {
           // Appending dialog to document.body to cover sidenav in docs app
@@ -251,22 +280,22 @@ html
               span Categories
             li.navmenu-item
               span
-                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[0].val")  {{ filters[0].name }}
+                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[0].val", ng-click="filterArticles(filters[0])")  {{ filters[0].name }}
             li.navmenu-item
               span
-                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[1].val")  {{ filters[1].name }}
+                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[1].val", ng-click="filterArticles(filters[1])")  {{ filters[1].name }}
             li.navmenu-item
               span
-                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[2].val")  {{ filters[2].name }}
+                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[2].val", ng-click="filterArticles(filters[2])")  {{ filters[2].name }}
             li.navmenu-item
               span
-                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[3].val")  {{ filters[3].name }}
+                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[3].val", ng-click="filterArticles(filters[3])")  {{ filters[3].name }}
             li.navmenu-item
               span
-                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[4].val") {{ filters[4].name }}
+                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[4].val", ng-click="filterArticles(filters[4])") {{ filters[4].name }}
             li.navmenu-item
               span
-                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[5].val")  {{ filters[5].name }}
+                md-checkbox(style="width: 100%; height: 100%;", ng-model="filters[5].val", ng-click="filterArticles(filters[5])")  {{ filters[5].name }}
 
       div.sitebody
         block content

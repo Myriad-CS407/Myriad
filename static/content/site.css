@@ -34,7 +34,8 @@
 .sitebody {
     padding-top: 51px;
     position: absolute;
-    height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
 .adam-table td {
