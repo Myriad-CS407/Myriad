@@ -113,3 +113,11 @@ ul.nav > li {
 .almosteverything {
     height: calc(100% - 60px)!important;
 }
+
+.navmenu-nav > li > span > md-checkbox {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
