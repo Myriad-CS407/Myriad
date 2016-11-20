@@ -30,7 +30,7 @@ block content
             button.close(type="button", data-dismiss="modal") &times;
             h4.modal-title {{ modal_text }}
           div.modal-body.fullmodal
-            iframe#iFrameViewer.modal-iframe
+            iframe#iFrameViewer.modal-iframe(sandbox="allow-forms allow-scripts")
 
 block filter_button
   button.navbar-toggle(type="button", data-toggle="offcanvas", data-target="#filterMenu", data-canvas="body", style="float:right; border-style:none")

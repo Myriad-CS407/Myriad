@@ -9,23 +9,20 @@
           div
             br
             div.row
-              div.col-xs-3
-                form(name="input", action="html_form_action.asp", method="get")
-                  key Name
-              dev.col-xs-9
-                input.form-control(ng-model="name", type="text", name="newsName")
-            br
+              div.col-xs-8.col-xs-offset-2
+                md-input-container(style="width: 100%;")
+                  label Name
+                  input(ng-model="name")
             div.row
-              div.col-xs-3
-                form(name="input", action="html_form_action.asp", method="get")
-                  key URL
-              dev.col-xs-9
-                input.form-control(ng-model="url", type="text", name="urlLink")
-            br
+              div.col-xs-8.col-xs-offset-2
+                md-input-container(style="width: 100%;")
+                  label URL
+                  input(ng-model="url")
             div.row
-              div.col-xs-3 Description
-              div.col-xs-9
-                textarea.form-control#news( name="resp", rows="12", cols="30", placeholder="Enter Description...")
+              div.col-xs-8.col-xs-offset-2
+                md-input-container(style="width: 100%;")
+                  label Description
+                  textarea(md-select-on-focus="", placeholder="Enter Description...")
             br
             div.row
               div.col(style="text-align: center")
